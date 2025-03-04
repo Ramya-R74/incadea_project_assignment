@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg" style="width: 400px;">
+      <h2 class="text-center mb-4">Login</h2>
+      
+      <form (ngSubmit)="onLogin($event)">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" id="username" class="form-control" [(ngModel)]="username" name="username" required />
+        </div>
+  
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="role" class="form-label">Select Role</label>
+          <select id="role" class="form-control" [(ngModel)]="role" name="role" required>
+            <option value="">Select Role</option>
+            <option value="Admin">Admin</option>
+            <option value="Customer">Customer</option>
+            <option value="Sales">Sales</option>
+            <option value="Purchase">Purchase</option>
+          </select>
+        </div>
+  
+        <div *ngIf="role === 'Admin'" class="mb-3">
+          <label for="apiKey" class="form-label">API Key</label>
+          <input type="text" id="apiKey" class="form-control" [(ngModel)]="apiKey" name="apiKey" />
+        </div>
+  
+        <button type="submit" class="btn btn-primary w-100">Login</button><br><br>
+      </form>
+  
+      <div *ngIf="successMessage" class="alert alert-success">
+        {{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+      </div>
+    </div>
+  </div>
+  

@@ -87,5 +87,5 @@ Feel free to fork the repo, create a feature branch, and submit a pull request!
 This project is **private** for now, but licensing details can be added later.
 
 ---
-Made with ❤️ by **Ramya R**
+Made by **Ramya R**
 
